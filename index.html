@@ -2,17 +2,66 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width", initial-scale="1.0">
-        <title>Eli's Canvas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Silvend's Den</title>
         <link rel="stylesheet" href="style.css">
     </head>
 <body>
-    <div class="mainContainer">
-        <div class="mediumContainer">
-            <aside>Place holder wooo</aside>
 
-            <div class="textContainers">
-                <div class="directories">
+    <audio id="song"></audio>
+
+    <script>
+    const songs = [
+        "Enjambre - Tercer Tipo.mp3",
+        "Nectar.mp3",
+        "Rosa Nautica.mp3"
+    ]
+    let currentSong = 0;
+
+    const audio = document.getElementById("song")
+
+    function playNext() {
+    audio.src = songs[currentSong];
+    audio.play();
+
+    currentSong = (currentSong + 1) % songs.length;
+}
+
+    audio.addEventListener("ended", playNext);
+
+    playNext();
+
+    document.addEventListener("click", function startMusic() {
+        playNext();
+
+    document.removeEventListener("click", startMusic);
+}, { once: true });
+    </script>
+
+    <div class="mainContainer">
+        <div class="leftSideBar">
+            <div class="currentlyDoing">
+                <h1>Currently:</h1>
+                <li><b>Reading:</b> Dracula by Bram Stoker</li>
+                <li><b>Watching:</b> Saiki K.</li>
+                <li><b>Playing:</b> Nothing!! :c</li>
+            </div>
+            <div class="guestbook">
+                <ul>
+                    <li>
+                        <a href="https://silvend.atabook.org/">
+                            Sign my Guestbook!
+                        </a>
+                    </li>
+                </ul>
+                <br>
+                <p>Send me comments, suggest shows, movies, games, books, anything!</p>
+            </div>
+            <div class="clickMe">
+            </div>
+        </div>
+        <div class="mediumContainer">
+                    <nav class="directories">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="favorites.html">Favorites</a></li>
@@ -20,44 +69,70 @@
                         <li><a href="existence.html">Remnants</a></li>
                         <li><a href="dumpster.html">Dumpster</a></li>
                     </ul>
-                </div>
+                </nav>
+            <aside>
+                <img src="https://i.pinimg.com/1200x/d6/cd/75/d6cd7544fe268d214957d5eab41ba8f5.jpg">
+            </aside>
+
+            <div class="textContainers">
                 <div class="marqueeContainer">
-                    <marquee behavior="scroll" direction="left">Eli's Canvas</marquee>
+                    <marquee behavior="scroll" direction="left">
+                        <div class="marqueeContent">
+                            Silvend's Den
+                        </div>
+                    </marquee>
                 </div>
-                <p>"Here lies Eli. You can tell it's him because we put his name on the stone"</p>
+                <p class="firstText">"Here lies Eli. You can tell it's him because we put his name on the stone"</p>
                 <div class="introParagraph">
-                    <p>Hello world! My name is Eli(He/They), a super awesome sauce dude. I have an infinite list of interests and hobbies, so feel free to look around. This is a piece of my heart that I'd love to share with anyone that happened to 
+                    <p>Hello world! My name is Eli, a super awesome sauce dude. I have an infinite list of interests and hobbies, so feel free to look around. This is a piece of my heart that I'd love to share with anyone that happened to 
                         stumble upon this website.
                     </p>
                 </div>
                 <div class="aboutMe">
                     <p>I'm a 6teen year old chud with severe sophomore slump! I was nerfed because my swag was too much for humanity. I like to do a lot of things, but my main interests are coding, art, geology, and math.</p>
                 </div>
-
-                            <div class="container-content">
-            <h2>I participate in lots of stuff. See a glimse of what brings me joy here!</h2>
-
-            <div class="collapsibleList">
-                <input type="checkbox" id="collapsibleHead">
-                <label for="collapsibleHead">TMSCA/UIL >> </label>
-            <div class="collapsibleText">
-                <p>I've been partivipating in TMSCA/UIL competitions since I was in 6th grade. I typically compete in the math and science competitions. Don't let the fact I've been doing it for a while fool you, I am terrible a it.
-                    This year, I made it my goal to make it to state, I need a change.
-                </p>
             </div>
-            </div>
-            
-            <div class="collapsibleList">
-                <input type="checkbox" id="collapsibleHead">
-                <label for="collapsibleHead">Satellite Club >></label>
-                <div class="collapsibleText">
-                    <p>This is my first year in this club, and it has been super fun so far. Currently, we are applying for the NASA TechRise and BWSI Cubesat Challenge, but nothing is for sure yet. Hopefully me and my team can get our proposals accepted, because we have some really cool/niche research in mind! </p>
+            <div class=carousel>
+                <div class="carouselTrack">
+                    <div class="carouselContent">
+                        <div class="card"><img src="pkmnPanel1.jpg"></div>
+                        <div class="card"><img src="pkmnPanel2.jpg"></div>
+                        <div class="card"><img src="pkmnPanel3.jpg"></div>
+                        <div class="card"><img src="pkmnPanel4.jpg"></div>
+                        <div class="card"><img src="pkmnPanel5.jpg"></div>
+                        <div class="card"><img src="pkmnPanel7.jpg"></div>
+                    </div>
+                    <div aria-hidden="true" class="carouselContent">
+                        <div class="card"><img src="pkmnPanel1.jpg"></div>
+                        <div class="card"><img src="pkmnPanel2.jpg"></div>
+                        <div class="card"><img src="pkmnPanel3.jpg"></div>
+                        <div class="card"><img src="pkmnPanel4.jpg"></div>
+                        <div class="card"><img src="pkmnPanel5.jpg"></div>
+                        <div class="card"><img src="pkmnPanel7.jpg"></div>
+                    </div>
+                    <div aria-hidden="true" class="carouselContent">
+                        <div class="card"><img src="pkmnPanel1.jpg"></div>
+                        <div class="card"><img src="pkmnPanel2.jpg"></div>
+                        <div class="card"><img src="pkmnPanel3.jpg"></div>
+                        <div class="card"><img src="pkmnPanel4.jpg"></div>
+                        <div class="card"><img src="pkmnPanel5.jpg"></div>
+                        <div class="card"><img src="pkmnPanel7.jpg"></div>
+                    </div>
+                    <div aria-hidden="true" class="carouselContent">
+                        <div class="card"><img src="pkmnPanel1.jpg"></div>
+                        <div class="card"><img src="pkmnPanel2.jpg"></div>
+                        <div class="card"><img src="pkmnPanel3.jpg"></div>
+                        <div class="card"><img src="pkmnPanel4.jpg"></div>
+                        <div class="card"><img src="pkmnPanel5.jpg"></div>
+                        <div class="card"><img src="pkmnPanel7.jpg"></div>
+                    </div>
                 </div>
             </div>
-
             </div>
-
         </div>
-    </div>
+
+
+
+</div>
 </body>
 </html>
